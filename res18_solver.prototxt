@@ -1,0 +1,29 @@
+train_net: "./train/flag/res18_300_train.prototxt"
+test_net: "./train/flag/res18_300_test.prototxt"
+
+test_iter: 179
+test_interval: 1000000
+test_initialization: false
+
+base_lr: 0.001
+display: 1
+lr_policy: "multistep"
+max_iter: 20000
+stepvalue: 15000
+stepvalue: 18000
+gamma: 0.1
+momentum: 0.9
+weight_decay: 0.0005
+average_loss: 100
+iter_size: 1
+type: "SGD"
+
+solver_mode: GPU
+random_seed: 0
+debug_info: false
+snapshot: 5000
+snapshot_prefix: "./train/flag/snapshot/res18_300_flag"
+
+eval_type: "detection"
+show_per_class_result: true
+ap_version: "11point"
